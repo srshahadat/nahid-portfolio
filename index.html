@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nahid The Developer — Modern Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(8px);
+      }
+      .nav-blur {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(12px);
+      }
+      .fade-up {
+        animation: fadeUp 0.8s ease both;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
+    <!-- ✅ NAVBAR -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 nav-blur shadow-md border-b border-white/10"
+    >
+      <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <h1 class="font-bold text-xl tracking-wide">
+          <span class="text-blue-400">Nahid</span> The App Developer
+        </h1>
+       <nav class="hidden md:flex items-center gap-6 relative">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <div class="relative">
+                <!-- Trigger Button -->
+                <button id="dropdownBtn" class="hover:text-blue-400 transition px-2 py-1">
+                    Pages
+                </button>
+                
+                <!-- Dropdown Menu -->
+                <div id="dropdownMenu" class="absolute left-0 top-full hidden bg-gray-800 rounded-lg mt-1 w-40 shadow-lg z-50">
+                    <ul class="py-2">
+                      <li><a href="up-service/hello.php" class="block px-4 py-2 hover:bg-gray-700">Hello</a></li>
+                    </ul>
+                </div>
+            </div>
+          <a href="learn/learn-php.php" class="hover:text-blue-400 transition">Learn PHP</a>
+          <a href="learn/php-documentation.php" class="hover:text-blue-400 transition">Documentation</a>
+          <a href="#about" class="hover:text-blue-400 transition">About</a>
+          <a href="#services" class="hover:text-blue-400 transition">Services</a>
+          <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
+          <a href="#testimonials" class="hover:text-blue-400 transition">Reviews</a>
+            <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+        </nav>
+
+        <button
+          id="menuBtn"
+          class="md:hidden p-2 rounded bg-white/10 hover:bg-white/20"
+        >
+          ☰
+        </button>
+      </div>
+
+      <!-- mobile menu -->
+      <div
+        id="mobileMenu"
+        class="hidden flex-col items-center gap-3 bg-slate-900/95 text-white py-4"
+      >
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <!-- ✅ HERO -->
+    <section
+      id="home"
+      class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative"
+    >
+      <div class="absolute inset-0 -z-10">
+        <img
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
+          class="w-full h-full object-cover opacity-30"
+        />
+      </div>
+
+      <div class="fade-up">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-4">
+          Hi, I'm <span class="text-blue-400">Nahid</span>
+        </h2>
+        <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-6">
+          Full-Stack Developer • Modern • Fast • Reliable  
+          I build web & mobile apps that perform beautifully.
+        </p>
+
+        <div class="flex gap-4 justify-center">
+          <a
+            href="#contact"
+            class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-semibold shadow-md transition"
+          >
+            Hire Me
+          </a>
+          <a
+            href="#portfolio"
+            class="border border-blue-400 px-6 py-3 rounded-lg text-blue-300 font-semibold hover:bg-blue-500/10 transition"
+          >
+            My Works
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ ABOUT -->
+    <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h3 class="text-3xl font-bold mb-4">About Me</h3>
+          <p class="text-slate-300 leading-relaxed">
+            I’m Nahid, a passionate developer from Bangladesh focused on crafting
+            elegant, high-performance websites and applications.  
+            I specialize in React, Node.js, PHP, and UI/UX design.
+          </p>
+
+          <ul class="mt-6 space-y-2 text-slate-300">
+            <li>✅ Web & Mobile responsive design</li>
+            <li>✅ Clean, maintainable code</li>
+            <li>✅ API & backend integration</li>
+            <li>✅ SEO & performance optimization</li>
+          </ul>
+        </div>
+        <div class="flex justify-center">
+          <img
+            src="https://avatars.dicebear.com/api/initials/Nahid.svg"
+            alt="Nahid"
+            class="rounded-full w-56 h-56 border-4 border-blue-500 shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ SERVICES -->
+    <section id="services" class="py-24 bg-slate-800/50">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold mb-10">Services</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass rounded-2xl p-6 hover:scale-105 transition shadow-lg">
+            <h4 class="text-xl font-semibold mb-2">Web Development</h4>
+            <p class="text-slate-300">
+              Full-stack web solutions optimized for speed and scalability.
+            </p>
+          </div>
+          <div class="glass rounded-2xl p-6 hover:scale-105 transition shadow-lg">
+            <h4 class="text-xl font-semibold mb-2">UI/UX Design</h4>
+            <p class="text-slate-300">
+              Clean, conversion-focused interfaces that users love.
+            </p>
+          </div>
+          <div class="glass rounded-2xl p-6 hover:scale-105 transition shadow-lg">
+            <h4 class="text-xl font-semibold mb-2">Maintenance</h4>
+            <p class="text-slate-300">
+              Long-term updates, security, and ongoing support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ PORTFOLIO -->
+    <section id="portfolio" class="py-24 px-6 max-w-6xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10">My Projects</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=800&auto=format&fit=crop"
+            class="object-cover w-full h-60"
+          />
+          <div
+            class="absolute inset-0 bg-slate-900/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition"
+          >
+            <h5 class="text-lg font-semibold mb-2">E-commerce Platform</h5>
+            <a href="#" class="text-blue-400 underline">View Details</a>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop"
+            class="object-cover w-full h-60"
+          />
+          <div
+            class="absolute inset-0 bg-slate-900/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition"
+          >
+            <h5 class="text-lg font-semibold mb-2">SaaS Dashboard</h5>
+            <a href="#" class="text-blue-400 underline">View Details</a>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop"
+            class="object-cover w-full h-60"
+          />
+          <div
+            class="absolute inset-0 bg-slate-900/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition"
+          >
+            <h5 class="text-lg font-semibold mb-2">Mobile App</h5>
+            <a href="#" class="text-blue-400 underline">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ TESTIMONIALS -->
+    <section id="testimonials" class="py-24 bg-slate-800/60">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h3 class="text-3xl font-bold mb-10">What Clients Say</h3>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="glass p-6 rounded-2xl shadow-lg">
+                <p class="text-slate-300">
+                  “Nahid delivered an amazing product ahead of time!”
+                </p>
+                <h5 class="mt-3 font-semibold">— Rahim, CEO</h5>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="glass p-6 rounded-2xl shadow-lg">
+                <p class="text-slate-300">
+                  “Excellent work and great communication throughout.”
+                </p>
+                <h5 class="mt-3 font-semibold">— Farida, Founder</h5>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="glass p-6 rounded-2xl shadow-lg">
+                <p class="text-slate-300">
+                  “Support after launch was beyond expectations.”
+                </p>
+                <h5 class="mt-3 font-semibold">— Tech Lead</h5>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination mt-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ CONTACT -->
+    <section id="contact" class="py-24 px-6 max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-8 text-center">Get In Touch</h3>
+      <div class="grid md:grid-cols-2 gap-10">
+        <form
+          id="contactForm"
+          class="space-y-4 bg-slate-800/60 p-6 rounded-2xl shadow-lg"
+        >
+          <input
+            type="text"
+            placeholder="Your Name"
+            required
+            class="w-full p-3 bg-white/10 rounded-md text-white focus:outline-none"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            required
+            class="w-full p-3 bg-white/10 rounded-md text-white focus:outline-none"
+          />
+          <textarea
+            rows="4"
+            placeholder="Your Message"
+            required
+            class="w-full p-3 bg-white/10 rounded-md text-white focus:outline-none"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-semibold transition"
+          >
+            Send Message
+          </button>
+        </form>
+
+        <div class="space-y-3">
+          <p class="text-slate-300">📧 Email: nahid@example.com</p>
+          <p class="text-slate-300">📞 Phone: +880 17XXXXXXXX</p>
+          <p class="text-slate-300">📍 Location: Bangladesh</p>
+          <div class="flex gap-4 mt-4">
+            <a href="#" class="hover:text-blue-400">LinkedIn</a>
+            <a href="#" class="hover:text-blue-400">GitHub</a>
+            <a href="#" class="hover:text-blue-400">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ FOOTER -->
+    <footer
+      class="border-t border-white/10 py-6 text-center text-slate-400 text-sm"
+    >
+      © <span id="year"></span> Nahid The Developer — All rights reserved.
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+      // mobile menu toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+    
+      // year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    
+      // swiper init
+      new Swiper(".mySwiper", {
+        loop: true,
+        pagination: { el: ".swiper-pagination", clickable: true },
+        autoplay: { delay: 3000 },
+      });
+    
+      // fake contact submit
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Message sent (demo only)");
+          this.reset();
+        });
+    
+      // dropdown menu
+      const dropdownBtn = document.getElementById("dropdownBtn");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+    
+      dropdownBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // click event parent পর্যন্ত না যেতে দাও
+        dropdownMenu.classList.toggle("hidden");
+      });
+    
+      // Click outside to close dropdown
+      window.addEventListener("click", (e) => {
+        if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+
+
+  </body>
+</html>

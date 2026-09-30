@@ -1,0 +1,460 @@
+<!doctype html>
+<!--
+  Index.html
+  Professional portfolio-style landing page for "Nahid The Developer"
+  - Tailwind CSS (Play CDN) + Bootstrap 5 included
+  - Swiper.js for swipeable testimonials / hero slider
+  - Animated sections using simple CSS + AOS-style small utility (no external AOS lib required)
+  - Single file, ready-to-use. Replace placeholder images/text as needed.
+-->
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nahid The Developer — Portfolio &amp; Services</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tailwind Play CDN (for convenience) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+      /* Small custom utilities and animations */
+      .fade-in { animation: fadeInUp .9s ease both; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(14px);} to { opacity:1; transform: none; } }
+
+      .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
+
+      /* Navbar dropdown hover for desktop */
+      @media (min-width: 992px) {
+        .dropdown-hover:hover > .dropdown-menu { display: block; margin-top: 0; }
+      }
+
+      /* simple hero overlay gradient */
+      .hero-overlay { background: linear-gradient(180deg, rgba(2,6,23,0.55), rgba(2,6,23,0.25)); }
+
+      /* Footer small text */
+      .muted { color: rgba(255,255,255,0.65); }
+
+      /* responsive container padding for tailwind + bootstrap interplay */
+      .section-pad { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100 leading-relaxed">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed w-100 z-50">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <div class="rounded-full bg-white/10 p-2 me-2">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 1018 0A9 9 0 003 12z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="fw-bold">Nahid The Developer</div>
+            <small class="muted">Professional &amp; Modern Portfolio</small>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonial</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+
+            <!-- Pages dropdown -->
+            <li class="nav-item dropdown dropdown-hover">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Pages</a>
+              <ul class="dropdown-menu dropdown-menu-end bg-slate-900 border-0 shadow-lg p-3">
+                <li><a class="dropdown-item text-white" href="#portfolio">Portfolio</a></li>
+                <li><a class="dropdown-item text-white" href="#services">Services</a></li>
+                <li><a class="dropdown-item text-white" href="#pricing">Pricing</a></li>
+                <li><a class="dropdown-item text-white" href="#blog">Blog</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="btn btn-outline-light ms-2" href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hero" class="w-full h-full object-cover opacity-40" />
+        <div class="absolute inset-0 hero-overlay"></div>
+      </div>
+
+      <div class="container position-relative" style="z-index:2">
+        <div class="row align-items-center">
+          <div class="col-lg-7 text-start py-20">
+            <div class="glass p-5 rounded-3 fade-in">
+              <h1 class="display-5 fw-bold mb-3">Nahid The Developer</h1>
+              <p class="lead mb-4">Fully professional portfolio-ready landing page — modern UI, responsive, animated, and ready to customize. I build pixel-perfect websites &amp; web apps.</p>
+
+              <div class="d-flex gap-2">
+                <a href="#contact" class="btn btn-primary btn-lg">Hire Me</a>
+                <a href="#portfolio" class="btn btn-outline-light btn-lg">View Work</a>
+              </div>
+
+              <div class="mt-4 small muted">Available for freelance &amp; full-time work • Based in Bangladesh</div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="p-4 bg-white/5 rounded-3 shadow-lg text-center">
+              <img src="https://avatars.dicebear.com/api/initials/Nahid.svg" alt="Nahid avatar" class="rounded-circle mb-3" width="140" height="140" />
+              <h5 class="mb-1">Nahid The Developer</h5>
+              <p class="muted mb-2">Full-stack Developer • Web &amp; Mobile</p>
+              <div class="d-flex justify-content-center gap-2">
+                <a class="btn btn-sm btn-outline-light" href="#contact">Message</a>
+                <a class="btn btn-sm btn-outline-light" href="#portfolio">Resume</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- down arrow -->
+      <a href="#about" class="position-absolute bottom-4 start-50 translate-middle-x text-white opacity-90">
+        <div class="d-flex flex-column align-items-center gap-2">
+          <span class="small muted">scroll</span>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="animate-bounce"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-pad">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4">
+            <h2 class="fw-bold">About Me</h2>
+            <p class="muted">I am Nahid, a dedicated web developer with strong focus on building modern, maintainable and high-performance web applications. I specialize in frontend engineering, backend APIs, and full product delivery.</p>
+
+            <ul class="list-unstyled mt-3">
+              <li>✅ Web & Mobile responsive design</li>
+              <li>✅ Modern JavaScript, React, Node.js</li>
+              <li>✅ PHP, Laravel, MySQL</li>
+              <li>✅ Performance & accessibility best practices</li>
+            </ul>
+
+            <a href="#services" class="btn btn-outline-light mt-3">See Services</a>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="p-3 rounded-3 bg-white/3">
+                  <h3 class="mb-0">120+</h3>
+                  <p class="small muted mb-0">Projects Completed</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded-3 bg-white/3">
+                  <h3 class="mb-0">8+</h3>
+                  <p class="small muted mb-0">Years Experience</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded-3 bg-white/3">
+                  <h3 class="mb-0">50+</h3>
+                  <p class="small muted mb-0">Happy Clients</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded-3 bg-white/3">
+                  <h3 class="mb-0">99%</h3>
+                  <p class="small muted mb-0">Project Satisfaction</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES (pages link example) -->
+    <section id="services" class="bg-slate-800 section-pad">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="fw-bold">Services</h3>
+          <small class="muted">Explore pages linked from the top menu</small>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="p-4 rounded-3 bg-white/6 h-100">
+              <h5>Web Development</h5>
+              <p class="muted small">Frontend, backend, full-stack — optimized for performance and accessibility.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 rounded-3 bg-white/6 h-100">
+              <h5>UI/UX Design</h5>
+              <p class="muted small">Clean and modern interfaces focused on conversions and user satisfaction.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 rounded-3 bg-white/6 h-100">
+              <h5>Maintenance & Support</h5>
+              <p class="muted small">Ongoing support, updates, hosting guidance and troubleshooting.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PORTFOLIO sample page anchor (Pages dropdown points here) -->
+    <section id="portfolio" class="section-pad">
+      <div class="container">
+        <h3 class="fw-bold mb-4">Portfolio (Example Pages)</h3>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card bg-slate-900 border-0 p-3 h-100">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop&s=placeholder" class="card-img-top rounded-3 mb-3" alt="Project"/>
+              <div class="card-body p-0">
+                <h5 class="card-title">E-commerce platform</h5>
+                <p class="muted small">Full-stack e-commerce with payment integration.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-slate-900 border-0 p-3 h-100">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&s=placeholder" class="card-img-top rounded-3 mb-3" alt="Project"/>
+              <div class="card-body p-0">
+                <h5 class="card-title">SaaS Dashboard</h5>
+                <p class="muted small">Realtime analytics and data visualization.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-slate-900 border-0 p-3 h-100">
+              <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=800&auto=format&fit=crop&s=placeholder" class="card-img-top rounded-3 mb-3" alt="Project"/>
+              <div class="card-body p-0">
+                <h5 class="card-title">Mobile App</h5>
+                <p class="muted small">Cross-platform app with native-like performance.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING sample page -->
+    <section id="pricing" class="bg-slate-800 section-pad">
+      <div class="container">
+        <h3 class="fw-bold mb-4">Pricing</h3>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="p-4 rounded-3 bg-white/6 h-100">
+              <h5>Starter</h5>
+              <p class="muted small">For personal projects</p>
+              <div class="fs-3 fw-bold">$299</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 rounded-3 bg-white/6 h-100 border-2 border-primary">
+              <h5>Pro</h5>
+              <p class="muted small">For businesses</p>
+              <div class="fs-3 fw-bold">$899</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 rounded-3 bg-white/6 h-100">
+              <h5>Enterprise</h5>
+              <p class="muted small">Custom solutions</p>
+              <div class="fs-3 fw-bold">Contact</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG sample page -->
+    <section id="blog" class="section-pad">
+      <div class="container">
+        <h3 class="fw-bold mb-4">Blog</h3>
+        <p class="muted">This is a sample blog listing. Replace with your CMS/blog content or static posts.</p>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <article class="p-3 rounded-3 bg-white/4 h-100">
+              <h5>How I build fast websites</h5>
+              <p class="small muted">Best practices and quick tips.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="p-3 rounded-3 bg-white/4 h-100">
+              <h5>Designing for conversions</h5>
+              <p class="small muted">UI patterns that convert users.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="p-3 rounded-3 bg-white/4 h-100">
+              <h5>APIs &amp; authentication</h5>
+              <p class="small muted">Secure tokens and session management.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (Swiper for swipeable) -->
+    <section id="testimonials" class="bg-slate-800 section-pad">
+      <div class="container">
+        <h3 class="fw-bold mb-4">What clients say</h3>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper py-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="p-4 rounded-3 bg-white/6">
+                <p class="muted">"Nahid delivered our project ahead of schedule. Excellent communication and high quality work."</p>
+                <div class="fw-bold mt-2">— Rahim, CEO</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="p-4 rounded-3 bg-white/6">
+                <p class="muted">"Professional, thoughtful and detail-oriented — the website looks great."</p>
+                <div class="fw-bold mt-2">— Farida, Founder</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="p-4 rounded-3 bg-white/6">
+                <p class="muted">"Support after launch was superb. Highly recommended."</p>
+                <div class="fw-bold mt-2">— Tech Lead</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- pagination -->
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-pad">
+      <div class="container">
+        <h3 class="fw-bold mb-4">Frequently Asked Questions</h3>
+        <div class="accordion" id="faqAcc">
+          <div class="accordion-item bg-slate-900 border-0 mb-2">
+            <h2 class="accordion-header" id="q1"><button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">How long does a typical project take?</button></h2>
+            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body muted">It depends on scope — simple sites 1–2 weeks, medium apps 4–8 weeks, complex products longer.</div></div>
+          </div>
+
+          <div class="accordion-item bg-slate-900 border-0 mb-2">
+            <h2 class="accordion-header" id="q2"><button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">Do you provide post-launch support?</button></h2>
+            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body muted">Yes — maintenance &amp; support packages are available.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-slate-900 section-pad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <h3 class="fw-bold">Contact</h3>
+            <p class="muted">Interested in working together? Send a message.</p>
+
+            <form id="contactForm" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input class="form-control bg-white/5 text-white" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control bg-white/5 text-white" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea class="form-control bg-white/5 text-white" rows="4" required></textarea>
+              </div>
+              <button class="btn btn-primary">Send message</button>
+            </form>
+
+          </div>
+
+          <div class="col-lg-6">
+            <div class="p-4 rounded-3 bg-white/6">
+              <h5 class="mb-2">Get in touch</h5>
+              <p class="small muted mb-1">Email: nahid@example.com</p>
+              <p class="small muted mb-1">Phone: +880 17XXXXXXXX</p>
+              <p class="small muted">Location: Bangladesh</p>
+
+              <div class="mt-3">
+                <a href="#" class="me-2">LinkedIn</a>
+                <a href="#" class="me-2">GitHub</a>
+                <a href="#">Twitter</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 bg-slate-900 border-t border-white/5">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="small muted">&copy; <span id="year"></span> Nahid The Developer</div>
+        <div class="small">designed by <a href="https://sonicsoftora.com" target="_blank" class="text-decoration-none">Sonicsoftora Ltd.</a></div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+      // update year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // init swiper
+      const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 16,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        autoplay: { delay: 4000 },
+      });
+
+      // simple form validation and fake submit
+      document.getElementById('contactForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        btn.disabled = true; btn.innerText = 'Sending...';
+        setTimeout(()=>{ btn.disabled = false; btn.innerText = 'Send message'; alert('Message sent (demo). Replace with your backend endpoint).'); this.reset(); }, 900);
+      });
+
+      // smooth anchor scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          const target = document.querySelector(this.getAttribute('href'));
+          if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+        });
+      });
+
+      // accessible dropdown hover fallback: keep bootstrap dropdown on mobile (no JS needed)
+    </script>
+
+  </body>
+</html>
